@@ -27,4 +27,13 @@ public class CourseControllerTest {
        Assertions.assertEquals(actualMessage, expextedoutput);
     }
 
+    @Test
+    public void saveAllApi(){
+        String actualMessage = "All records saved for country IN  by John";
+        Mockito.when(httpServlet.getRequestURI()).thenReturn("/saveAll");
+        String exOp = courseController.saveAll("John","IN");
+        Assertions.assertEquals(actualMessage, exOp);
+
+    }
+
 }
