@@ -33,6 +33,7 @@ public class CourseControllerTest {
         Mockito.when(httpServlet.getRequestURI()).thenReturn("/saveAll");
         String exOp = courseController.saveAll("John","IN");
         Assertions.assertEquals(actualMessage, exOp);
+
     }
 
 }
