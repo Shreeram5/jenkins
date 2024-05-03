@@ -1,9 +1,8 @@
 package com.courseDetails.courseDetails.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Locale;
 
 @RestController
 @RequestMapping(value = "/course")
@@ -12,6 +11,11 @@ public class CourseController {
     @GetMapping(value = "/name")
     public String jenkinDeployStatus(@PathVariable String name){
         return "First Jenkins deployment successful by " + name;
+    }
+
+    @PostMapping(value = "/saveAll")
+    public String saveAll(@RequestBody String name, @RequestHeader String countryCode){
+        return "All records saved for country "+countryCode+ "  by "+ name;
     }
 
 }
