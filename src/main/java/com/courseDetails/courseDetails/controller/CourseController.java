@@ -1,14 +1,14 @@
 package com.courseDetails.courseDetails.controller;
 
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Locale;
+
 
 @RestController
 @RequestMapping(value = "/course")
 public class CourseController {
 
-    @GetMapping(value = "/name")
+    @GetMapping(value = "/name/{name}")
     public String jenkinDeployStatus(@PathVariable String name){
         return "First Jenkins deployment successful by " + name;
     }
